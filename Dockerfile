@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 ENV MAKE_JOBS=8
 ENV OBUSPA_ARGS="-v4"

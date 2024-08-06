@@ -69,7 +69,7 @@
 #define VALUE_SIZE 256 // maximum size of a header or body parameter's value
 #define MAX_PATHS 10 // maximum number of paths that can be included in a Get, Add, Set, Delete, GetSupportedDM, GetInstances
 #define MAX_PARAMVALUE 10 // maximum number of parameter/value pairs that can be included in a param_setting
-#define WAIT_BETWEEN_MSGS 2 // time to wait between sending messages; also wait twice this before closing connection at end
+#define WAIT_BETWEEN_MSGS 5 // time to wait between sending messages; also wait twice this before closing connection at end
 
 //------------------------------------------------------------------------------
 // Forward declarations. Note these are not static, because we need them in the symbol table for USP_LOG_Callstack() to show them
@@ -906,7 +906,7 @@ int ParseOperate(char line[LINE_SIZE])
 **************************************************************************/
 int ParseGetSupportedProtocol(char line[LINE_SIZE])
 {
-    char versions[MAX_PARAMVALUE];
+    char versions[VALUE_SIZE];
     int c, x, j=0; // j is character number in param or value, n is number of param_paths
     int quote_start = 0; // set to 1 at first double quote and reset at 2nd
     char param[PARAM_SIZE]; // stores parameter name
