@@ -11,6 +11,7 @@ RUN apt-get update && \
 # Install dependencies
 RUN apt-get update &&\
     apt-get -y install \
+        vim \
         libssl-dev \
         libcurl4-openssl-dev\
         libsqlite3-dev \

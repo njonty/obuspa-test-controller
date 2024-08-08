@@ -17,7 +17,7 @@
 # Adding MQTT parameters to test the datamodel interface
 #
 
-Device.LocalAgent.EndpointID "proto::rx_usp_agent_mqtt"
+Device.LocalAgent.EndpointID "self:usp-controller"
 
 
 ## Adding boot params
@@ -33,12 +33,12 @@ Device.LocalAgent.Subscription.1.Persistent true
 
 Device.LocalAgent.MTP.1.MQTT.ResponseTopicConfigured "/usp/endpoint/#"
 Device.LocalAgent.MTP.1.MQTT.Reference "Device.MQTT.Client.1"
-Device.MQTT.Client.1.BrokerAddress "mqtt.eclipse.org"
+Device.MQTT.Client.1.BrokerAddress "200.20.20.119"
 Device.MQTT.Client.1.ProtocolVersion "5.0"
 Device.MQTT.Client.1.BrokerPort "1883"
 Device.MQTT.Client.1.TransportProtocol "TCP/IP"
-Device.MQTT.Client.1.Username ""
-Device.MQTT.Client.1.Password ""
+Device.MQTT.Client.1.Username "obuspa_controller"
+Device.MQTT.Client.1.Password "controller123"
 Device.MQTT.Client.1.Alias "cpe-1"
 Device.MQTT.Client.1.Enable true
 Device.MQTT.Client.1.ClientID ""
@@ -57,9 +57,9 @@ Device.LocalAgent.Controller.1.ControllerCode ""
 Device.LocalAgent.Controller.1.MTP.1.Alias "cpe-1"
 Device.LocalAgent.Controller.1.MTP.1.Enable true
 Device.LocalAgent.Controller.1.MTP.1.Protocol "MQTT"
-Device.LocalAgent.Controller.1.EndpointID "self::usp-controller"
+Device.LocalAgent.Controller.1.EndpointID "os::012345-80787112F8FF"
 Device.LocalAgent.Controller.1.MTP.1.MQTT.Reference "Device.MQTT.Client.1"
-Device.LocalAgent.Controller.1.MTP.1.MQTT.Topic "/usp/controller"
+Device.LocalAgent.Controller.1.MTP.1.MQTT.Topic "/usp/agents"
 
 
 
